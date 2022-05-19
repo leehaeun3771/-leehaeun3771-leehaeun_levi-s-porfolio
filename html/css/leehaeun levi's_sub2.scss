@@ -1,0 +1,618 @@
+$h2:#{'min(2.6em, 26px)'};
+$h3:#{'min(2.4em, 24px)'};
+$h4:#{'min(1.4em, 14px)'};
+$li:#{'min(1.4em, 14px)'};
+$lh:#{'min(1rem, 40px)'};
+$h:#{'min(2rem, 80px)'};
+$plh:#{'min(0.5rem, 20px)'};
+$wmt:#{'min(2.5rem, 100px)'};
+$smt:#{'min(1rem, 40px)'};
+
+
+@mixin grid($win) {
+    @if($win == 'mob'){
+    width: 90%;
+    max-width: 420px;
+    margin: 0 auto;
+    }
+    @else{
+        width: 80%;
+        max-width: 1080px;
+        margin: 0 auto;
+    }
+}
+
+
+@mixin fl {
+    display: flex;
+    justify-content: space-between;   
+}
+
+@mixin bg {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+@mixin ff($fontname, $url) {
+    @font-face {
+        font-family: #{$fontname};
+        src: url('./fonts/#{$url}') format('truetype');
+    }
+    
+}
+
+@include ff(xe, 'xeicon.ttf');
+@include ff(dut, 'dutchb.ttf');
+@include ff(dutl, 'dutch.ttf');
+@include ff(Thin, 'NotoSansKR-Thin.otf');
+@include ff(Light, 'NotoSansKR-Light.otf');
+@include ff(Regular, 'NotoSansKR-Regular.otf');
+@include ff(Medium, 'NotoSansKR-Medium.otf');
+@include ff(Bold, 'NotoSansKR-Bold.otf');
+
+
+@mixin mobile{
+    @media (max-width:1024px) and (min-width:0px){
+        @content;         
+    }
+}
+
+@mixin mobile{
+    @media (max-width:420px) and (min-width:0px){
+        @content;         
+    }
+}
+
+
+
+html{
+    font-size: 3vw;
+    @include mobile{
+        font-size: 9.5vw;
+    }
+
+    body{
+        font-size: 0.7vw;
+        overflow-x: hidden;
+        @include mobile{
+            font-size: 2.4vw;
+        }
+    }
+}
+
+// 헤더
+.hdrWrap{
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    background-color: #fff;
+    header{
+        width: 80%;
+        max-width: 1350px;
+        margin: 0 auto;
+        @include fl;
+        height: $h;
+        background-color: #fff;
+        font-family: 'Regular';
+        @include mobile{
+            @include grid('mob');
+            height: $lh;
+        }
+        .logo{
+            cursor: pointer;
+            width: calc(100% / 16 * 1.4);
+            background-position: 0 0;
+            height: #{'min(1.5rem, 60px)'};
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-image: url('../images/기호/logo.jpg');
+            @include mobile{
+                width: calc(100% / 6);
+            }
+        }
+        ul.tab{
+            @include fl;
+            width: calc(100% / 16 * 6);
+            margin-right: auto;
+            line-height: $h;
+            margin-left: $lh;
+            @include mobile(){
+                display: none;
+            }
+            li{
+                font-family: 'Regular';
+                font-size: $h4;
+                width: 100%;
+                margin: 0 auto;
+                text-align: center;
+                color: #666;
+                cursor: pointer;
+                &:hover{
+                    font-weight: 700;
+                    color: #000;
+                }
+                
+            }
+
+        }
+        nav{
+            width: calc(100% / 16 * 4.5);
+            @include fl;
+            @include mobile{
+                width: 10%;
+            }
+            div{
+                @include mobile{
+                    display: none;
+                }
+            }
+            .bar{
+                font-size: $h4;
+                line-height: $h;
+                @include mobile{
+                    display: block;
+                    font-size: #{'min(1.6em, 16px)'};
+                    line-height: $lh;
+                }
+            }
+            i{
+                font-family: 'xe';
+                font-size: $h4;
+                line-height: $h;
+                cursor: pointer;
+                color: #666;
+                @include mobile{
+                    font-size: #{'min(1.6em, 16px)'};
+                    line-height: $lh;
+                    height: $lh;
+                }
+            }
+            span{
+                font-family: 'Regular';
+                font-size: $h4;
+                line-height: $h;
+                margin-left: 15px;
+                color: #333;
+                cursor: pointer;
+                &:hover{
+                    font-weight: 700;
+                    color: #000;
+                }
+            }
+        }
+    }
+}
+
+// 컨텐츠1
+.cntWrap{
+    .content.cnt01{
+        @include grid('pc');
+        section{
+            article{
+                @include fl;
+                .images{
+                    margin-top: $h;
+                    width: calc(100% / 12 * 7 - (#{'min(0.5rem, 20px)'}));
+                    @include bg;    
+                    .imgTop{
+                        .image{
+                            background-image: url('../images/sub2/cnt01001.png');
+                            width: 100%;
+                            height: #{'min(20rem, 800px)'};
+                        }
+                    }
+                    .imgMid{
+                        margin-top: #{'min(0.25rem, 10px)'};
+                        @include fl;
+                        .imgLeft{
+                            width: calc(100% / 2 - (#{'min(0.12rem, 5px)'}));
+                            .image{
+                                background-image: url('../images/sub2/cnt01002.png');
+                                height: #{'min(20rem, 800px)'};
+                            }
+                        }
+                        .imgRight{
+                            width: calc(100% / 2 - (#{'min(0.12rem, 5px)'}));
+                            .image{
+                                background-image: url('../images/sub2/cnt01003.png');
+                                width: 100%;
+                                height: #{'min(9.87rem, 395px)'};
+                                &:nth-child(2){
+                                    background-image: url('../images/sub2/cnt01004.png');
+                                    margin-top: #{'min(0.25rem, 10px)'};
+                                }
+                            }
+                        }
+                    }
+                    .imgBtm{
+                        margin-top: #{'min(0.25rem, 10px)'};
+                        @include fl;
+                        .image{
+                            background-image: url('../images/sub2/cnt01005.png');
+                            width: calc(100% / 2 - (#{'min(0.12rem, 5px)'}));
+                            background-color: #aac;
+                            height: #{'min(10rem, 400px)'};
+                            &:nth-child(2){
+                                background-image: url('../images/sub2/cnt01006.png');
+                            }
+
+                        }
+                    }
+                }
+                .texts{
+                    margin-top: $h;
+                    width: calc(100% / 12 * 5 - (#{'min(0.5rem, 20px)'}));
+                    .txtTop{
+                        margin-top: $lh;
+                        padding-bottom: $lh;
+                        border-bottom: 1px solid lightgray;
+                        h5{ 
+                            font-size: #{'min(1.4em, 14px)'};
+                            font-family: 'regular';
+                            line-height: $lh;
+                            color: #666;
+                        }
+                        h3{
+                            font-size: #{'min(2.0em, 20px)'};
+                            font-family: 'dut';
+                            line-height: $lh;
+                        }
+                        h4{
+                            font-size: #{'min(1.4em, 14px)'};
+                            font-family: 'regular';
+                            line-height: $lh;
+                            color: #666;
+                        }
+                        p{
+                            margin-top: $lh;
+                            font-size: #{'min(1.4em, 14px)'};
+                            font-family: 'regular';
+                            line-height: #{'min(0.75rem, 30px)'};
+                            color: #666;
+                        }
+                    }
+                    .txtMid{
+                        margin-top: #{'min(0.75rem, 30px)'};
+                        padding-bottom: #{'min(0.75rem, 30px)'};
+                        border-bottom: 1px solid lightgray;
+                        .material{
+                            h4{
+                                font-size: #{'min(1.4em, 14px)'};
+                                line-height: $plh;
+                                text-transform: capitalize;
+                                font-family: 'dutl';
+                            }
+                            h5{
+                                font-size: #{'min(1.4em, 14px)'};
+                                line-height: #{'min(0.75rem, 30px)'};
+                                color: #666;
+                                font-family: 'light';
+                            }
+                        }
+                        .color{
+                            h4{
+                                margin-top: #{'min(0.75rem, 30px)'};
+                                font-size: #{'min(1.4em, 14px)'};
+                                line-height: $plh;
+                                text-transform: capitalize;
+                                font-family: 'dutl';
+                            }
+                            .image{
+                                cursor: pointer;
+                            }
+                        }
+                        .size{
+                            h4{
+                                margin-top: #{'min(0.75rem, 30px)'};
+                                font-size: #{'min(1.4em, 14px)'};
+                                line-height: $plh;
+                                text-transform: capitalize;
+                                font-family: 'dutl';
+                            }
+                            ul{
+                                width: 70%;
+                                @include fl;
+                                li{
+                                    cursor: pointer;
+                                    font-size: #{'min(1.4em, 14px)'};
+                                    line-height: #{'min(0.75rem, 30px)'};
+                                    color: #666;
+                                    font-family: 'light';
+                                }
+                            }
+                        }
+                        .count{
+                            width: 30%;
+                            @include fl;
+                            margin-top: #{'min(0.75rem, 30px)'};
+                            h4{
+                                font-size: #{'min(1.4em, 14px)'};
+                                line-height: $plh;
+                                text-transform: capitalize;
+                                font-family: 'dutl';  
+                            }
+                            h5{
+                                cursor: pointer;
+                                font-size: #{'min(1.4em, 14px)'};
+                                line-height: $plh;
+                                text-transform: capitalize;
+                                font-family: 'dutl';
+                                span{
+                                    margin-left: $plh;
+                                }
+                            }
+                        }
+                    }
+                    .btns{
+                        @include fl;
+                        margin-top: $lh;
+                        .btn{
+                            width: calc(100% / 2 - (#{'min(0.5rem, 20px)'}));
+                            line-height: $lh;
+                            font-size: #{'min(1.7em, 17px)'};
+                            text-transform: uppercase;
+                            text-align: center;
+                            border: 1px solid lightgray;
+                            &:hover{
+                                cursor: pointer;
+                                background-color: #666;
+                                color: #fff;
+                            }
+                        }
+                    }
+
+                }
+            }
+        }
+    
+    }
+    .content.cnt02{
+        width: 100vw;
+        margin-top: #{'min(3rem, 120px)'};
+        header{
+            h2{
+                font-size: #{'min(2.6em, 26px)'};
+                 font-family: 'dut';
+                 text-align: center;
+                 text-transform: uppercase;
+                 line-height: $h;
+            }
+        }
+        section{
+            width: 95%;
+            margin: 0 auto;
+            @include fl;   
+            margin-top: $lh;
+            article{
+                width: calc(100% / 5 - (#{'min(0.5rem, 20px)'}));
+                .image{
+                    @include bg;
+                    height: #{'min(11rem, 440px)'};
+                    @for $i from 1 through 5{
+                        &.i#{$i}{
+                            background-image: url('../images/sub2/cnt0200#{$i}.png');
+                        }
+                    }
+
+                }
+                .texts{
+                    h3{
+                        font-size: #{'min(1.4em, 14px)'};
+                        font-family: 'medium';
+                        line-height: $lh;
+
+                    }
+                    h3{
+                        font-size: #{'min(1.4em, 14px)'};
+                        font-family: 'medium';
+                        line-height: $lh;
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+
+
+// 배너
+.bnrWrap{
+    width: 100vw;
+    margin-top: $wmt;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    @include mobile{
+        margin-top: $smt;
+    }
+    .banner{
+        padding-top: $wmt;
+        padding-bottom: #{'min(2.5rem, 100px)'};
+        @include grid('pc');
+        @include mobile{
+            padding-top: 0px;
+            padding-bottom: $smt;
+            @include grid('mob');
+        }
+        header{
+            text-align: center;
+            h2{
+                font-size: $h2;
+                line-height: $h;
+                font-family: 'dut';
+                text-transform: uppercase;
+                @include mobile{
+                    font-size: #{'min(1.6em, 16px)'};
+                }
+            }
+
+        }
+        form{
+            width: calc(100% / 12 * 6.8);
+            margin: 0 auto;
+            @include mobile{
+                width: 100%;
+            }
+            .sex{
+                font-size: $h4;
+                line-height: $plh;
+                font-family: 'thin';
+                text-transform: uppercase;
+                margin-right: auto;
+            }
+            .email{
+                margin-top: $plh;
+                input{
+                    &:nth-child(1){
+                        height: $lh;
+                        width: 79%;
+                        border: 0px;
+                        border-bottom: 1px solid gray;
+                    }
+                    &:nth-child(2){
+                        width: 20%;
+                        height: $lh;
+                        text-transform: uppercase;
+                        font-size: $h4;
+                        font-family: 'dut';
+                        border: 0px ;
+                        background-color: #d9d9d9;
+                    }
+                }
+            }
+            .checkbox{
+                margin-top: #{'min(0.5rem, 20px)'};
+                @include fl;
+                input{
+                    width: #{'min(0.5rem, 20px)'};
+                    height: #{'min(0.5rem, 20px)'};
+                }
+                h4{
+                    margin-left: #{'min(0.25rem, 10px)'};
+                    font-size: #{'min(1.3em, 13px)'};
+                    line-height: $plh;
+                    @include mobile{
+                        font-size: #{'min(1.2em, 12px)'};
+                    }
+                }
+            }
+        }
+
+    }
+}
+
+
+
+
+// 푸터
+.ftrWrap{
+    footer{
+       @include grid('pc');
+       @include fl;
+       padding-top: $h;
+       padding-bottom: $lh;
+       @include mobile{
+           @include grid('mob');
+           padding-top: 0px;
+           position: relative;
+           padding-bottom: $lh;
+           height: #{'min(4rem, 160px)'};
+       }
+       .ftrLeft{
+           width: calc(100% / 12 * 8);
+           @include fl;
+           @include mobile{
+                display: none;
+           }
+           ul.nav{
+               width: calc(100% / 3);
+               padding-left: #{'min(1.5rem, 60px)'};
+               li{
+                   cursor: pointer;
+                   font-size: $li;
+                   line-height: $lh;
+                   font-family: 'light';
+                   &:nth-child(1){
+                       font-family: 'bold';
+                   }
+               }
+           }
+       }
+       .ftrRight{
+           width: calc(100% / 12 * 4);
+           padding-left: #{'min(1.5rem, 60px)'};
+           @include mobile{
+              width: 100%;
+              padding-left: 0px;
+              position: absolute;
+           }
+           ul.nav{
+               li{
+                   cursor: pointer;
+                   font-size: $li;
+                   line-height: $lh;
+                   font-family: 'light';
+                   @include mobile{
+                       font-size: #{'min(1.1em, 11px)'};
+                       line-height: $plh;
+                   }
+                   &:nth-child(1){
+                   font-family: 'bold';
+                        @include mobile{
+                            font-size: #{'min(1.3em, 13px)'};
+                            line-height: $h;
+                        }
+                   }
+                   &:nth-child(2){
+                       margin-top: #{'min(-0.5rem, -20px)'};
+                   }
+                   &:nth-last-child(1){
+                       line-height: $plh;
+                       @include mobile{
+                          margin-right: 0;
+                          margin-top: #{'min(-3.7em, -37px)'};
+                          text-align: right;
+                       }
+                   }
+               }
+           }
+       }
+    }
+}
+
+// 탑버튼
+.Topbtns{
+    @include mobile{
+        display: none;
+    }
+    position: fixed;
+    right: 50px;
+    bottom: 50px;
+    .kakao{
+        background-color: #f9e000;
+        width: #{'min(2rem, 80px)'};
+        height: $h;
+        border-radius: 50%;
+        @include bg;
+        background-image: url('../images/기호/kakao.png');
+        cursor: pointer;
+    }
+    .top{
+        margin-top: $plh;
+        width: #{'min(2rem, 80px)'};
+        height: $h;
+        border-radius: 50%;
+        background-color: #777;
+        color: #fff;
+        font-size: #{'min(2.2em, 22px)'};
+        font-family: 'dut';
+        text-align: center;
+        line-height: $h;
+        cursor: pointer;
+        text-transform: uppercase;
+
+    }
+}
