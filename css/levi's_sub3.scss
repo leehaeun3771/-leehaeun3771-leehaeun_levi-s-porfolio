@@ -115,7 +115,7 @@ html{
         }
         ul.tab{
             @include fl;
-            width: calc(100% / 16 * 6);
+            width: calc(100% / 16 * 5);
             margin-right: auto;
             line-height: $h;
             margin-left: $lh;
@@ -134,12 +134,25 @@ html{
                     font-weight: 700;
                     color: #000;
                 }
+                &:nth-child(3){
+                    font-weight: 700;
+                    color: black;
+                }
+                &:nth-child(3)::after{
+                    content: '';
+                    display: block;
+                    width: 70%;
+                    margin: 0 auto;
+                    height: 1px;
+                    margin-top: #{'min(-0.5rem, 20px)'};
+                    background-color: black;
+                }
                 
             }
 
         }
         nav{
-            width: calc(100% / 16 * 4.5);
+            width: calc(100% / 16 * 3.8);
             @include fl;
             @include mobile{
                 width: 10%;
@@ -150,6 +163,7 @@ html{
                 }
             }
             .bar{
+                display: none;
                 font-size: $h4;
                 line-height: $h;
                 @include mobile{

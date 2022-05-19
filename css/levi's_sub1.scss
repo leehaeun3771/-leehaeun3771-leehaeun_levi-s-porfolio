@@ -115,7 +115,7 @@ html{
         }
         ul.tab{
             @include fl;
-            width: calc(100% / 16 * 6);
+            width: calc(100% / 16 * 5);
             margin-right: auto;
             line-height: $h;
             margin-left: $lh;
@@ -134,12 +134,25 @@ html{
                     font-weight: 700;
                     color: #000;
                 }
+                &:nth-child(1){
+                    font-weight: 700;
+                    color: black;
+                }
+                &:nth-child(1)::after{
+                    content: '';
+                    display: block;
+                    width: 70%;
+                    margin: 0 auto;
+                    height: 1px;
+                    margin-top: #{'min(-0.5rem, 20px)'};
+                    background-color: black;
+                }
                 
             }
 
         }
         nav{
-            width: calc(100% / 16 * 4.5);
+            width: calc(100% / 16 * 3.8);
             @include fl;
             @include mobile{
                 width: 10%;
@@ -150,6 +163,7 @@ html{
                 }
             }
             .bar{
+                display: none;
                 font-size: $h4;
                 line-height: $h;
                 @include mobile{
@@ -303,6 +317,8 @@ html{
                     @include fl;
                     article{
                         width: calc(100% / 2 - 20px);
+                        height: #{'min(15rem, 600px)'};
+                        box-shadow: #666 1px 1px 10px;
                         @include mobile{
                             width: calc(100% / 2 - 10px);
                             margin: 0 auto;
@@ -313,9 +329,10 @@ html{
                             }
                         }
                         .image{
+                            cursor: pointer;
+                            transition: all 0.5s;
                             @include bg;
                             height: #{'min(15rem, 600px)'};
-                            box-shadow: #666 1px 10px 5px;
                             @for $i from 1 through 8{
                                 &.i#{$i}{
                                     background-image: url('../images/sub1/cnt0100#{$i}.png');
@@ -589,24 +606,23 @@ html{
                             @include bg;
                             background-color: #ccc;
                             height: #{'min(8rem, 320px)'};
-                            transition: all 3s;
+                            background-size: 103%;
                             @for $i from 1 through 12{
                                 &.i#{$i}{
                                     background-image: url('../images/sub1/cnt0200#{$i}.png');
                                 }
                             }
-                            &:hover{
-                                background-size: 120%;
-                            }
                             @include mobile{
                                 height: #{'min(6rem, 240px)'};
-                             }
+                            }
                         }
                         .texts{
                             h3{
                                 font-size: #{'min(1.4em, 14px)'};
                                 font-family: 'regular';
-                                line-height: $lh;
+                                line-height: $plh;
+                                height: $lh;
+                                margin-top: #{'min(0.25rem, 10px)'};
                                 @include mobile{
                                     font-size: #{'min(1.2em, 12px)'};
                                     line-height: $plh;
@@ -615,7 +631,7 @@ html{
                             h4{
                                 font-size: #{'min(1.4em, 14px)'};
                                 font-family: 'light';
-                                line-height: $lh;
+                                line-height: $plh;
                                 @include mobile{
                                     font-size: #{'min(1.2em, 12px)'};
                                     line-height: $plh;

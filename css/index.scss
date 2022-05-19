@@ -139,7 +139,7 @@ html{
 
         }
         nav{
-            width: calc(100% / 16 * 4.5);
+            width: calc(100% / 16 * 3.8);
             @include fl;
             @include mobile{
                 width: 10%;
@@ -150,6 +150,7 @@ html{
                 }
             }
             .bar{
+                display: none;
                 font-size: $h4;
                 line-height: $h;
                 @include mobile{

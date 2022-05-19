@@ -115,7 +115,7 @@ html{
         }
         ul.tab{
             @include fl;
-            width: calc(100% / 16 * 6);
+            width: calc(100% / 16 * 5);
             margin-right: auto;
             line-height: $h;
             margin-left: $lh;
@@ -134,12 +134,25 @@ html{
                     font-weight: 700;
                     color: #000;
                 }
+                &:nth-child(2){
+                    font-weight: 700;
+                    color: black;
+                }
+                &:nth-child(2)::after{
+                    content: '';
+                    display: block;
+                    width: 70%;
+                    margin: 0 auto;
+                    height: 1px;
+                    margin-top: #{'min(-0.5rem, 20px)'};
+                    background-color: black;
+                }
                 
             }
 
         }
         nav{
-            width: calc(100% / 16 * 4.5);
+            width: calc(100% / 16 * 3.8);
             @include fl;
             @include mobile{
                 width: 10%;
@@ -150,6 +163,7 @@ html{
                 }
             }
             .bar{
+                display: none;
                 font-size: $h4;
                 line-height: $h;
                 @include mobile{
@@ -199,6 +213,7 @@ html{
                     @include bg;    
                     .imgTop{
                         .image{
+                            @include bg;
                             background-image: url('../images/sub2/cnt01001.png');
                             width: 100%;
                             height: #{'min(20rem, 800px)'};
@@ -210,6 +225,7 @@ html{
                         .imgLeft{
                             width: calc(100% / 2 - (#{'min(0.12rem, 5px)'}));
                             .image{
+                                @include bg;
                                 background-image: url('../images/sub2/cnt01002.png');
                                 height: #{'min(20rem, 800px)'};
                             }
@@ -217,6 +233,7 @@ html{
                         .imgRight{
                             width: calc(100% / 2 - (#{'min(0.12rem, 5px)'}));
                             .image{
+                                @include bg;
                                 background-image: url('../images/sub2/cnt01003.png');
                                 width: 100%;
                                 height: #{'min(9.87rem, 395px)'};
@@ -231,11 +248,13 @@ html{
                         margin-top: #{'min(0.25rem, 10px)'};
                         @include fl;
                         .image{
+                            @include bg;
                             background-image: url('../images/sub2/cnt01005.png');
                             width: calc(100% / 2 - (#{'min(0.12rem, 5px)'}));
                             background-color: #aac;
                             height: #{'min(10rem, 400px)'};
                             &:nth-child(2){
+                                @include bg;
                                 background-image: url('../images/sub2/cnt01006.png');
                             }
 
@@ -254,6 +273,9 @@ html{
                             font-family: 'regular';
                             line-height: $lh;
                             color: #666;
+                            span{
+                                color: #111;
+                            }
                         }
                         h3{
                             font-size: #{'min(2.0em, 20px)'};
@@ -300,8 +322,28 @@ html{
                                 text-transform: capitalize;
                                 font-family: 'dutl';
                             }
-                            .image{
+                            .colorimg{
+                                margin-top: #{'min(0.8em, 8px)'};
                                 cursor: pointer;
+                                @include fl;
+                                width: 60%;
+                                .image{
+                                    width: calc(100% / 10 - 5px);
+                                    @include bg;
+                                    border-radius: 50%;
+                                    border: 2px solid white;
+                                    padding: 10px 10px;
+                                    height: $plh;
+                                    @for $i from 1 through 10{
+                                        &.i#{$i}{
+                                            background-image: url('../images/sub2/col00#{$i}.png');
+                                        }
+                                    }
+                                    &.show{
+                                        border: 2px solid gray;
+                                    }
+
+                                }
                             }
                         }
                         .size{
@@ -321,6 +363,10 @@ html{
                                     line-height: #{'min(0.75rem, 30px)'};
                                     color: #666;
                                     font-family: 'light';
+                                    &.show1{
+                                        color: #000;
+                                        font-weight: 700;
+                                    }
                                 }
                             }
                         }
@@ -396,6 +442,7 @@ html{
                             background-image: url('../images/sub2/cnt0200#{$i}.png');
                         }
                     }
+                    cursor: pointer;
 
                 }
                 .texts{
@@ -403,11 +450,12 @@ html{
                         font-size: #{'min(1.4em, 14px)'};
                         font-family: 'medium';
                         line-height: $lh;
+                        cursor: pointer;
 
                     }
-                    h3{
+                    h4{
                         font-size: #{'min(1.4em, 14px)'};
-                        font-family: 'medium';
+                        font-family: 'regular';
                         line-height: $lh;
                     }
                 }
@@ -567,7 +615,7 @@ html{
                         }
                    }
                    &:nth-child(2){
-                       margin-top: #{'min(-0.5rem, -20px)'};
+                    margin-top: 0px;
                    }
                    &:nth-last-child(1){
                        line-height: $plh;

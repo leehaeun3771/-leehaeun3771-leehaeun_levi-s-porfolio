@@ -8,16 +8,19 @@ $(function(){
 
     //컨텐츠 1 이미지 넘기기
     cntTab.find('li').eq(0).addClass('show1');
-    cntTab.find('li').click(function(){
+    
+    cntTab.find('li').mouseenter(function(){
         
         cntTab.find('li').removeClass('show1');
         $(this).addClass('show1');
 
         var ind = $(this).index();
-        cntGr.find('.artGroup').css({display : 'none'})
+        cntGr.find('.artGroup').css({
+            display : 'none',
+        })
         cntGr.find('.artGroup').eq(ind).css({
             display : 'flex',
-            width : 'calc(100% / 4)'
+            width : 'calc(100% / 4)',
             
         })
         i = ind;
@@ -29,7 +32,19 @@ $(function(){
     conLif = $('.content.cnt02 section .artLeft .aco .title').eq(1).find('li');
     conLisize = $('.content.cnt02 section .artLeft .aco .title').eq(3).find('li');
     conLit = $('.content.cnt02 section .artLeft .aco .title').eq(5).find('li');
+    conright = $('.content.cnt02 section .artRight article .image');
 
+    conright.mouseenter(function(){
+        $(this).animate({
+            backgroundSize : '113%'
+        },400)
+    });
+    conright.mouseleave(function(){
+        $(this).animate({
+            backgroundSize : '103%'
+        },)
+    });
+    
     
     contitle.even().click(function(){
         // contitle.even().removeClass('show');
@@ -43,9 +58,6 @@ $(function(){
             $(this).sibling().css({display : 'block'});
         });
 
-
-        //클릭했을때 a다. 
-        //만약 a를 한번 더 클릭하면 b다.
 
 
         conLif.click(function(){
