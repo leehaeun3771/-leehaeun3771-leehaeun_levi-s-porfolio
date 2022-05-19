@@ -725,6 +725,7 @@ html{
                         border-bottom: 1px solid gray;
                     }
                     &:nth-child(2){
+                        cursor: pointer;
                         width: 20%;
                         height: $lh;
                         text-transform: uppercase;

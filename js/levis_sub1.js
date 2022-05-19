@@ -36,7 +36,7 @@ $(function(){
 
     conright.mouseenter(function(){
         $(this).animate({
-            backgroundSize : '113%'
+            backgroundSize : '110%'
         },400)
     });
     conright.mouseleave(function(){
@@ -76,6 +76,10 @@ $(function(){
 
     });
 
+    // 탑버튼
+    $('.Topbtns .top').click(function(){
+        $('html,body').stop().animate({scrollTop : 0},500);
+    });
 
 
 });

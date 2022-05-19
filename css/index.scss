@@ -81,6 +81,10 @@ html{
     }
 }
 
+body .image{
+    cursor: pointer;
+}
+
 // 헤더
 .hdrWrap{
     width: 100vw;
@@ -354,6 +358,7 @@ html{
                             }
                             
                             .image{
+                                cursor: pointer;
                                 height: #{'min(15rem, 600px)'};
                                 @include bg;
                                 @for $i from 1 through 20{
@@ -488,8 +493,11 @@ html{
                             justify-content: space-between;
                             transition: all 0.5s;
                             article{
+                                z-index: 999;
+                                cursor: pointer;
                                 width: calc(100% / 2 - 10px);
                                 .image{
+                                    cursor: pointer;
                                     width: 100%;
                                     margin: 0 10px;
                                     height: #{'min(15rem, 600px)'};
@@ -1042,6 +1050,7 @@ html{
                         border-bottom: 1px solid gray;
                     }
                     &:nth-child(2){
+                        cursor: pointer;
                         width: 20%;
                         height: $lh;
                         text-transform: uppercase;

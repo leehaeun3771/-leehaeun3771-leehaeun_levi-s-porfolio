@@ -12,7 +12,7 @@ $smt:#{'min(1rem, 40px)'};
 @mixin grid($win) {
     @if($win == 'mob'){
     width: 90%;
-    max-width: 700px;
+    max-width: 420px;
     margin: 0 auto;
     }
     @else{
@@ -21,6 +21,7 @@ $smt:#{'min(1rem, 40px)'};
         margin: 0 auto;
     }
 }
+
 
 @mixin fl {
     display: flex;
@@ -51,7 +52,7 @@ $smt:#{'min(1rem, 40px)'};
 @include ff(Bold, 'NotoSansKR-Bold.otf');
 
 
-@mixin tablet{
+@mixin mobile{
     @media (max-width:1024px) and (min-width:0px){
         @content;         
     }
@@ -80,8 +81,6 @@ html{
     }
 }
 
-
-
 // 헤더
 .hdrWrap{
     width: 100vw;
@@ -103,6 +102,7 @@ html{
             height: $lh;
         }
         .logo{
+            cursor: pointer;
             width: calc(100% / 16 * 1.4);
             background-position: 0 0;
             height: #{'min(1.5rem, 60px)'};
@@ -134,11 +134,11 @@ html{
                     font-weight: 700;
                     color: #000;
                 }
-                &:nth-child(3){
+                &:nth-child(2){
                     font-weight: 700;
                     color: black;
                 }
-                &:nth-child(3)::after{
+                &:nth-child(2)::after{
                     content: '';
                     display: block;
                     width: 70%;
@@ -200,312 +200,274 @@ html{
     }
 }
 
-// 메인
-.mainWrap{
-    main{
-        width: 100vw;
-        margin-top: $h;
-        height: #{'min(21rem, 840px)'};
-        @include tablet{
-            height: #{'min(13.5rem, 540px)'};;
-        }
-        @include mobile{
-            margin-top: $lh;
-            height: #{'min(5rem, 200px)'};
-
-        }
-        .vedioBox{
-            width: 100%;
-            height: #{'min(21rem, 840px)'};
-            overflow: hidden;
-            @include tablet{
-                height: #{'min(13.5rem, 540px)'};;
-            }
-            @include mobile{
-                height: #{'min(5rem, 200px)'};
-            }
-            .vedio{
-                width: 100%;
-                height: #{'min(21rem, 840px)'};
-                @include tablet{
-                    height: #{'min(13.5rem, 540px)'};;
-                }
-                @include mobile{
-                    height: #{'min(5rem, 200px)'};
-                }
-                video{
-                    width: 100%;
-                    margin-top: #{'min(-1rem, -40px)'};
-                }
-            }
-            .texts{
-                .btns{
-                    .btn{
-                        font-size: #{'min(7rem, 280px)'};
-                        font-family: 'xe';
-                        margin-top: -400px;
-                        color: #eee;
-                        display: none
-                    }
-                }
-            }
-        }
-
-    }
-}
-
 // 컨텐츠1
 .cntWrap{
     .content.cnt01{
-        // @include grid('pc');
-        width: 100vw;
-        margin-top: $h;
-        @include mobile{
-            margin-top: $lh;
-        }
-        .btn{
-            cursor: pointer;
-            width: calc(100%/ 12 * 2.2);
-            margin: 0 auto;
-            height: #{'min(1.5rem, 60px)'};
-            border: 1px solid gray;
-            text-align: center;
-            font-size: #{'min(1.7em, 17px)'};
-            font-family: 'dut';
-            text-transform: uppercase;
-            line-height: #{'min(1.5rem, 60px)'};
-            &:hover{
-                background-color: #666;
-                color: #fff;
-            }
-            @include mobile{
-                line-height: $lh;
-                width: 25%;
-                height: $lh;
-                font-size: #{'min(1.2em, 12px)'};
-            }
-        }
-        header{
-            margin-top: $h;
-            text-align: center;
-            @include mobile{
-                margin-top: $plh;
-            }
-            h5{
-                line-height: $plh;
-                font-size: #{'min(1.7em, 17px)'};
-                font-family: 'dutl';
-                @include mobile{
-                    font-size: #{'min(1.2em, 12px)'};
-                }
-            }
-            h2{
-                font-size: #{'min(4.5em, 45px)'};
-                line-height: #{'min(1.5rem, 60px)'};
-                font-family: 'dut';
-                @include mobile{
-                    font-size: #{'min(2.0em, 20px)'};
-                    line-height: #{'min(0.75rem, 30px)'};
-                }
-            }
-            p{
-                width: 50%;
-                margin: 0 auto;
-                margin-top: $lh;
-                font-size: #{'min(2.2em, 22px)'};
-                font-family: 'regular';
-                @include mobile{
-                    font-size: #{'min(1.1em, 11px)'};
-                    line-height: $plh;
-                    width: 80%;
-                    margin: 0 auto;
-                    margin-top: $plh;
-                }
-            }
-        }
-        section{
-            width: 100%;
-            // margin-left: calc((100vw - 1080px) / -2);
-            margin-top: $h;
-            @include mobile{
-                margin-top: $lh;
-            }
-            article{
-                .image{
-                    @include bg;
-                    background-image: url('../images/sub3/리바이스501\ 1990.jpg');
-                    height: #{'min(17rem, 680px)'};
-                    @include mobile{
-                        height: #{'min(5.5rem, 220px)'};
-                    }
-                }
-            }
-        }
-    }
-    .content.cnt02{
-        height: #{'min(25rem, 1000px)'};
-        position: relative;
         @include grid('pc');
-        margin-top: $h;
-        @include mobile{
-            @include grid('mob');
-            margin-top: $lh;
-            height: #{'min(12rem, 480px)'};
-        }
-        header{
-            position: absolute;
-            width: 100%;
-            @include mobile{
-                right: 0;
-                left: 0;
-                margin: auto;
-            }
-            .txtView{
-                width: 100%;
-                overflow: hidden;
-                .txtGroup{
-                    width: 300%;
-                    @include  fl;
-                    transition: all 0.5s;
-                    .texts{
-                        width: calc(100% / 3);
-                        margin: 0 auto;
-                        text-align: center;
-                        h2{
-                            font-size: #{'min(4.2em, 42px)'};
-                            line-height: #{'min(1.75rem, 70px)'};
-                            font-family: 'dut';
-                            @include mobile{
-                                font-size: #{'min(1.7em, 17px)'};
-                                line-height: $plh;
-                            }
-                        }
-                        h4{
-                            font-size: #{'min(2.0em, 20px)'};
-                            line-height: $plh;
-                            font-family: 'dutl';
-                            color: #666;
-                            @include mobile{
-                                font-size: #{'min(1.4em, 14px)'};
-                                line-height: $plh;
-                            }
-                        }
-                    }
-                }
-            }
-            .btns{
-                @include fl;
-                position: absolute;
-                width: 100%;
-                top: $lh;
-                @include mobile{
-                    top: #{'min(0.25rem, 10px)'};
-                }
-                .btn{
-                    cursor: pointer;
-                    z-index: 99;
-                    @include bg;
-                    background-size: contain;
-                    height: #{'min(1.5rem, 60px)'};
-                    width: 10%;
-                    @include mobile{
-                        height: $plh;
-                    }
-
-                    &:nth-child(1){
-                        background-image: url('../images/기호/slim\ left\ grey.png');
-                    }
-                    &:nth-child(2){
-                        background-image: url('../images/기호/slim\ right\ grey.png');
-                    }
-                }
-            }
-        }
         section{
-            position: absolute;
-            margin-top: #{'min(4rem, 160px)'};
-            @include mobile{
-                margin-top: $h;
-            }
-            .artView{
-                width: 100%;
-                overflow: hidden;
-                .artGroup{
-                    width: 300%;
-                    @include fl;
-                    transition: all 0.5s;
-                    article{
-                        width: calc(100% / 3);
+            article{
+                @include fl;
+                .images{
+                    margin-top: $h;
+                    width: calc(100% / 12 * 7 - (#{'min(0.5rem, 20px)'}));
+                    @include bg;    
+                    .imgTop{
                         .image{
                             @include bg;
-                            background-color: #ccc;
-                            height: #{'min(15rem, 600px)'};
-                            @for $i from 1 through 3{
-                                &.i#{$i}{
-                                    background-image: url('../images/sub3/cnt00#{$i}.png');
-                                }
-                            }
-                            @include mobile{
-                                height: #{'min(6rem, 240px)'};
+                            background-image: url('../images/sub2/cnt01001.png');
+                            width: 100%;
+                            height: #{'min(20rem, 800px)'};
+                        }
+                    }
+                    .imgMid{
+                        margin-top: #{'min(0.25rem, 10px)'};
+                        @include fl;
+                        .imgLeft{
+                            width: calc(100% / 2 - (#{'min(0.12rem, 5px)'}));
+                            .image{
+                                @include bg;
+                                background-image: url('../images/sub2/cnt01002.png');
+                                height: #{'min(20rem, 800px)'};
                             }
                         }
-                        .texts{
-                            p{
-                                width: 85%;
-                                margin: 0 auto;
-                                font-size: #{'min(2em, 20px)'};
-                                line-height: $lh;
-                                text-align: center;
-                                font-family: 'regular';
-                                margin-top: #{'min(2rem, 80px)'};
-                                color: #666;
-                                @include mobile{
-                                    font-size: #{'min(1.2em, 12px)'};
-                                    line-height: $plh;
-                                    margin-top: $lh;
+                        .imgRight{
+                            width: calc(100% / 2 - (#{'min(0.12rem, 5px)'}));
+                            .image{
+                                @include bg;
+                                background-image: url('../images/sub2/cnt01003.png');
+                                width: 100%;
+                                height: #{'min(9.87rem, 395px)'};
+                                &:nth-child(2){
+                                    background-image: url('../images/sub2/cnt01004.png');
+                                    margin-top: #{'min(0.25rem, 10px)'};
                                 }
                             }
                         }
                     }
-                }
+                    .imgBtm{
+                        margin-top: #{'min(0.25rem, 10px)'};
+                        @include fl;
+                        .image{
+                            @include bg;
+                            background-image: url('../images/sub2/cnt01005.png');
+                            width: calc(100% / 2 - (#{'min(0.12rem, 5px)'}));
+                            background-color: #aac;
+                            height: #{'min(10rem, 400px)'};
+                            &:nth-child(2){
+                                @include bg;
+                                background-image: url('../images/sub2/cnt01006.png');
+                            }
 
-            }
-            ul.paging{
-                position: absolute;
-                width: 8%;
-                top: #{'min(16rem, 640px)'};
-                right: 0;
-                left: 0;
-                margin: auto;
-                @include fl;
-                @include mobile{
-                    top: #{'min(25.5em, 255px)'};
-                    width: 13%;
+                        }
+                    }
                 }
-                li{
-                    cursor: pointer;
-                    clip-path: circle(50% at 50% 50%);
-                    width: #{'min(0.4rem, 16px)'};
-                    height: #{'min(0.4rem, 16px)'};
-                    border-radius: 50%;
-                    background-color: #b0b0b0;
-                    transition: 0.5s;
-                    &.show{
-                        background-color: #c70125;
+                .texts{
+                    margin-top: $h;
+                    width: calc(100% / 12 * 5 - (#{'min(0.5rem, 20px)'}));
+                    .txtTop{
+                        margin-top: $lh;
+                        padding-bottom: $lh;
+                        border-bottom: 1px solid lightgray;
+                        h5{ 
+                            font-size: #{'min(1.4em, 14px)'};
+                            font-family: 'regular';
+                            line-height: $lh;
+                            color: #666;
+                            span{
+                                color: #111;
+                            }
+                        }
+                        h3{
+                            font-size: #{'min(2.0em, 20px)'};
+                            font-family: 'dut';
+                            line-height: $lh;
+                        }
+                        h4{
+                            font-size: #{'min(1.4em, 14px)'};
+                            font-family: 'regular';
+                            line-height: $lh;
+                            color: #666;
+                        }
+                        p{
+                            margin-top: $lh;
+                            font-size: #{'min(1.4em, 14px)'};
+                            font-family: 'regular';
+                            line-height: #{'min(0.75rem, 30px)'};
+                            color: #666;
+                        }
                     }
-                    @include mobile{
-                        width: #{'min(1.2rem, 12px)'};
-                        height: #{'min(1.2rem, 12px)'};
+                    .txtMid{
+                        margin-top: #{'min(0.75rem, 30px)'};
+                        padding-bottom: #{'min(0.75rem, 30px)'};
+                        border-bottom: 1px solid lightgray;
+                        .material{
+                            h4{
+                                font-size: #{'min(1.4em, 14px)'};
+                                line-height: $plh;
+                                text-transform: capitalize;
+                                font-family: 'dutl';
+                            }
+                            h5{
+                                font-size: #{'min(1.4em, 14px)'};
+                                line-height: #{'min(0.75rem, 30px)'};
+                                color: #666;
+                                font-family: 'light';
+                            }
+                        }
+                        .color{
+                            h4{
+                                margin-top: #{'min(0.75rem, 30px)'};
+                                font-size: #{'min(1.4em, 14px)'};
+                                line-height: $plh;
+                                text-transform: capitalize;
+                                font-family: 'dutl';
+                            }
+                            .colorimg{
+                                margin-top: #{'min(0.8em, 8px)'};
+                                cursor: pointer;
+                                @include fl;
+                                width: 60%;
+                                .image{
+                                    width: calc(100% / 10 - 5px);
+                                    @include bg;
+                                    border-radius: 50%;
+                                    border: 2px solid white;
+                                    padding: 10px 10px;
+                                    height: $plh;
+                                    @for $i from 1 through 10{
+                                        &.i#{$i}{
+                                            background-image: url('../images/sub2/col00#{$i}.png');
+                                        }
+                                    }
+                                    &.show{
+                                        border: 2px solid gray;
+                                    }
+
+                                }
+                            }
+                        }
+                        .size{
+                            h4{
+                                margin-top: #{'min(0.75rem, 30px)'};
+                                font-size: #{'min(1.4em, 14px)'};
+                                line-height: $plh;
+                                text-transform: capitalize;
+                                font-family: 'dutl';
+                            }
+                            ul{
+                                width: 70%;
+                                @include fl;
+                                li{
+                                    cursor: pointer;
+                                    font-size: #{'min(1.4em, 14px)'};
+                                    line-height: #{'min(0.75rem, 30px)'};
+                                    color: #666;
+                                    font-family: 'light';
+                                    &.show1{
+                                        color: #000;
+                                        font-weight: 700;
+                                    }
+                                }
+                            }
+                        }
+                        .count{
+                            width: 30%;
+                            @include fl;
+                            margin-top: #{'min(0.75rem, 30px)'};
+                            h4{
+                                font-size: #{'min(1.4em, 14px)'};
+                                line-height: $plh;
+                                text-transform: capitalize;
+                                font-family: 'dutl';  
+                            }
+                            h5{
+                                cursor: pointer;
+                                font-size: #{'min(1.4em, 14px)'};
+                                line-height: $plh;
+                                text-transform: capitalize;
+                                font-family: 'dutl';
+                                span{
+                                    margin-left: $plh;
+                                }
+                            }
+                        }
                     }
-                    
-                }                    
+                    .btns{
+                        @include fl;
+                        margin-top: $lh;
+                        .btn{
+                            width: calc(100% / 2 - (#{'min(0.5rem, 20px)'}));
+                            line-height: $lh;
+                            font-size: #{'min(1.7em, 17px)'};
+                            text-transform: uppercase;
+                            text-align: center;
+                            border: 1px solid lightgray;
+                            &:hover{
+                                cursor: pointer;
+                                background-color: #666;
+                                color: #fff;
+                            }
+                        }
+                    }
+
+                }
             }
+        }
+    
+    }
+    .content.cnt02{
+        width: 100vw;
+        margin-top: #{'min(3rem, 120px)'};
+        header{
+            h2{
+                font-size: #{'min(2.6em, 26px)'};
+                 font-family: 'dut';
+                 text-align: center;
+                 text-transform: uppercase;
+                 line-height: $h;
+            }
+        }
+        section{
+            width: 95%;
+            margin: 0 auto;
+            @include fl;   
+            margin-top: $lh;
+            article{
+                width: calc(100% / 5 - (#{'min(0.5rem, 20px)'}));
+                .image{
+                    @include bg;
+                    height: #{'min(11rem, 440px)'};
+                    @for $i from 1 through 5{
+                        &.i#{$i}{
+                            background-image: url('../images/sub2/cnt0200#{$i}.png');
+                        }
+                    }
+                    cursor: pointer;
+
+                }
+                .texts{
+                    h3{
+                        font-size: #{'min(1.4em, 14px)'};
+                        font-family: 'medium';
+                        line-height: $lh;
+                        cursor: pointer;
+
+                    }
+                    h4{
+                        font-size: #{'min(1.4em, 14px)'};
+                        font-family: 'regular';
+                        line-height: $lh;
+                    }
+                }
+            }
+
         }
     }
 }
 
 
-// 배너1,2
+
+// 배너
 .bnrWrap{
     width: 100vw;
     margin-top: $wmt;
@@ -514,58 +476,7 @@ html{
     @include mobile{
         margin-top: $smt;
     }
-    .banner.bnr01{
-        position: relative;
-        height: #{'min(17rem, 680px)'};
-        @include mobile{
-            height: #{'min(6rem, 240px)'};
-        }
-        .image{
-            @include bg;
-            background-image: url('../images/sub3/1950-4.jpg');
-            height: #{'min(17rem, 680px)'};
-            // position: relative;
-            @include mobile{
-                height: #{'min(6rem, 240px)'};
-                background-position: left 0;
-                background-size: 170%;
-            }
-        }
-        .btn{
-            cursor: pointer;
-            width: 10%;
-            margin: 0 auto;
-            text-align: center;
-            font-family: 'dut';
-            text-transform: uppercase;
-            line-height: #{'min(1.5rem, 60px)'};
-            font-size: #{'min(1.7em, 17px)'};
-            border: 1px solid white;
-            background-color: #fff;
-            position: absolute;
-            right: 0;
-            left: 0;
-            bottom: #{'min(1.5rem, 60px)'};
-            margin: auto;
-            // z-index: 999;
-            transition: all 0.2s;
-            &:hover{
-                background-color: #c70125;
-                border: 1px solid #c70125;
-                color: #fff;
-            }
-            @include mobile{
-                height: $lh;
-                line-height: $lh;
-                font-size: #{'min(1.2em, 12px)'};
-                width: 28%;
-                bottom: #{'min(0.5rem, 20px)'};
-            }
-
-
-        }
-    }
-    .banner.bnr02{
+    .banner{
         padding-top: $wmt;
         padding-bottom: #{'min(2.5rem, 100px)'};
         @include grid('pc');
@@ -610,6 +521,7 @@ html{
                         border-bottom: 1px solid gray;
                     }
                     &:nth-child(2){
+                        cursor: pointer;
                         width: 20%;
                         height: $lh;
                         text-transform: uppercase;
@@ -704,7 +616,7 @@ html{
                         }
                    }
                    &:nth-child(2){
-                       margin-top: #{'min(-0.5rem, -20px)'};
+                    margin-top: 0px;
                    }
                    &:nth-last-child(1){
                        line-height: $plh;
@@ -722,7 +634,7 @@ html{
 
 // 탑버튼
 .Topbtns{
-    @include tablet{
+    @include mobile{
         display: none;
     }
     position: fixed;
@@ -753,4 +665,3 @@ html{
 
     }
 }
-
