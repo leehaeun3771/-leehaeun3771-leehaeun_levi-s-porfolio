@@ -207,16 +207,26 @@ html{
         section{
             article{
                 @include fl;
+                @include mobile{
+                    display: block;
+                }
                 .images{
                     margin-top: $h;
                     width: calc(100% / 12 * 7 - (#{'min(0.5rem, 20px)'}));
-                    @include bg;    
+                    @include bg;   
+                    @include mobile{
+                        width: 100%;
+                        margin-top: 0px;
+                    } 
                     .imgTop{
                         .image{
                             @include bg;
                             background-image: url('../images/sub2/cnt01001.png');
                             width: 100%;
                             height: #{'min(20rem, 800px)'};
+                            @include mobile{
+                                height: #{'min(12rem, 480px)'};
+                            }
                         }
                     }
                     .imgMid{
@@ -224,22 +234,42 @@ html{
                         @include fl;
                         .imgLeft{
                             width: calc(100% / 2 - (#{'min(0.12rem, 5px)'}));
+                            @include mobile{
+                                width: calc(100% / 3 - (#{'min(0.5em, 5px)'}));
+                            }
                             .image{
                                 @include bg;
                                 background-image: url('../images/sub2/cnt01002.png');
                                 height: #{'min(20rem, 800px)'};
+                                @include mobile{
+                                    height: #{'min(4rem, 160px)'};
+                                    @include bg;
+                                }
                             }
                         }
                         .imgRight{
                             width: calc(100% / 2 - (#{'min(0.12rem, 5px)'}));
+                            @include mobile{
+                                @include fl;
+                                width: calc(100% / 3 * 2);
+                            }
                             .image{
                                 @include bg;
                                 background-image: url('../images/sub2/cnt01003.png');
                                 width: 100%;
                                 height: #{'min(9.87rem, 395px)'};
+                                @include mobile{
+                                    height: #{'min(4rem, 160px)'};
+                                    margin: 0px (#{'min(0.5em, 5px)'});
+                                }
                                 &:nth-child(2){
                                     background-image: url('../images/sub2/cnt01004.png');
                                     margin-top: #{'min(0.25rem, 10px)'};
+                                    @include mobile{
+                                        margin-top: 0px;
+                                        height: #{'min(4rem, 160px)'};
+                                        margin: 0px 0px 0px (#{'min(0.5em, 5px)'});
+                                    }
                                 }
                             }
                         }
@@ -247,6 +277,9 @@ html{
                     .imgBtm{
                         margin-top: #{'min(0.25rem, 10px)'};
                         @include fl;
+                        @include mobile{
+                            display: none
+                        }
                         .image{
                             @include bg;
                             background-image: url('../images/sub2/cnt01005.png');
@@ -264,10 +297,18 @@ html{
                 .texts{
                     margin-top: $h;
                     width: calc(100% / 12 * 5 - (#{'min(0.5rem, 20px)'}));
+                    @include mobile{
+                        margin-top: 0px;
+                        width: 100%;
+                    }
                     .txtTop{
                         margin-top: $lh;
                         padding-bottom: $lh;
                         border-bottom: 1px solid lightgray;
+                        @include mobile{
+                            margin-top: $plh;
+                            padding-bottom: $plh;
+                        }
                         h5{ 
                             font-size: #{'min(1.4em, 14px)'};
                             font-family: 'regular';
@@ -276,17 +317,29 @@ html{
                             span{
                                 color: #111;
                             }
+                            @include mobile{
+                                font-size: #{'min(1.2em, 12px)'};
+                                line-height: $plh;
+                            }
                         }
                         h3{
                             font-size: #{'min(2.0em, 20px)'};
                             font-family: 'dut';
                             line-height: $lh;
+                            @include mobile{
+                                font-size: #{'min(1.6em, 16px)'};
+                                line-height: #{'min(0.75rem, 30px)'};
+                                margin-top: #{'min(0.25rem, 10px)'};
+                            }
                         }
                         h4{
                             font-size: #{'min(1.4em, 14px)'};
                             font-family: 'regular';
                             line-height: $lh;
                             color: #666;
+                            @include mobile{
+                                font-size: #{'min(1.4em, 14px)'};
+                            }
                         }
                         p{
                             margin-top: $lh;
@@ -294,24 +347,40 @@ html{
                             font-family: 'regular';
                             line-height: #{'min(0.75rem, 30px)'};
                             color: #666;
+                            @include mobile{
+                                font-size: #{'min(1.2em, 12px)'};
+                                line-height: #{'min(0.75rem, 30px)'};
+                                margin-top: $plh;
+                            }
                         }
                     }
                     .txtMid{
                         margin-top: #{'min(0.75rem, 30px)'};
                         padding-bottom: #{'min(0.75rem, 30px)'};
                         border-bottom: 1px solid lightgray;
+                        @include mobile{
+                            margin-top: $plh;
+                            padding-bottom: $plh;
+                        }
+                        
                         .material{
                             h4{
                                 font-size: #{'min(1.4em, 14px)'};
                                 line-height: $plh;
                                 text-transform: capitalize;
                                 font-family: 'dutl';
+                                @include mobile{
+                                    font-size: #{'min(1.2em, 12px)'};
+                                }
                             }
                             h5{
                                 font-size: #{'min(1.4em, 14px)'};
                                 line-height: #{'min(0.75rem, 30px)'};
                                 color: #666;
                                 font-family: 'light';
+                                @include mobile{
+                                    line-height: $lh;
+                                }
                             }
                         }
                         .color{
@@ -321,6 +390,9 @@ html{
                                 line-height: $plh;
                                 text-transform: capitalize;
                                 font-family: 'dutl';
+                                @include mobile{
+                                    font-size: #{'min(1.2em, 12px)'};
+                                }
                             }
                             .colorimg{
                                 margin-top: #{'min(0.8em, 8px)'};
@@ -353,6 +425,9 @@ html{
                                 line-height: $plh;
                                 text-transform: capitalize;
                                 font-family: 'dutl';
+                                @include mobile{
+                                    font-size: #{'min(1.2em, 12px)'};
+                                }
                             }
                             ul{
                                 width: 70%;
@@ -374,11 +449,17 @@ html{
                             width: 30%;
                             @include fl;
                             margin-top: #{'min(0.75rem, 30px)'};
+                            @include mobile{
+                                width: 35%;
+                            }
                             h4{
                                 font-size: #{'min(1.4em, 14px)'};
                                 line-height: $plh;
                                 text-transform: capitalize;
                                 font-family: 'dutl';  
+                                @include mobile{
+                                    font-size: #{'min(1.2em, 12px)'};
+                                }
                             }
                             h5{
                                 cursor: pointer;
@@ -386,6 +467,9 @@ html{
                                 line-height: $plh;
                                 text-transform: capitalize;
                                 font-family: 'dutl';
+                                @include mobile{
+                                    font-size: #{'min(1.2em, 12px)'};
+                                }
                                 span{
                                     margin-left: $plh;
                                 }
@@ -395,6 +479,9 @@ html{
                     .btns{
                         @include fl;
                         margin-top: $lh;
+                        @include mobile{
+                            margin-top: $plh;
+                        }
                         .btn{
                             width: calc(100% / 2 - (#{'min(0.5rem, 20px)'}));
                             line-height: $lh;
@@ -407,6 +494,10 @@ html{
                                 background-color: #666;
                                 color: #fff;
                             }
+                            @include mobile{
+                                width: calc(100% / 2 - (#{'min(0.12rem, 5px)'}));
+                                font-size: #{'min(1.4em, 14px)'};
+                            }
                         }
                     }
 
@@ -418,6 +509,10 @@ html{
     .content.cnt02{
         width: 100vw;
         margin-top: #{'min(3rem, 120px)'};
+        @include mobile{
+            @include grid('mob');
+            margin-top: $lh;
+        }
         header{
             h2{
                 font-size: #{'min(2.6em, 26px)'};
@@ -425,6 +520,9 @@ html{
                  text-align: center;
                  text-transform: uppercase;
                  line-height: $h;
+                 @include mobile{
+                    font-size: #{'min(1.6em, 16px)'};
+                }
             }
         }
         section{
@@ -432,31 +530,118 @@ html{
             margin: 0 auto;
             @include fl;   
             margin-top: $lh;
+            @include mobile{
+                width: 100%;
+                margin-top: 0px;
+                flex-wrap: wrap;
+            }
             article{
                 width: calc(100% / 5 - (#{'min(0.5rem, 20px)'}));
+                @include mobile{
+                    width: calc(100% / 2 - (#{'min(0.12rem, 5px)'}));
+                    height: #{'min(6rem, 240px)'};
+                    &:nth-last-child(1){
+                        display: none
+                    }
+
+                }
                 .image{
                     @include bg;
+                    width: 100%;
                     height: #{'min(11rem, 440px)'};
+                    transition: opacity 0.5;
                     @for $i from 1 through 5{
                         &.i#{$i}{
                             background-image: url('../images/sub2/cnt0200#{$i}.png');
                         }
                     }
                     cursor: pointer;
+                    @include mobile{
+                        height: #{'min(6rem, 240px)'};
+                    }
+                    &.on1{
+                        opacity: 0.5;                      
+                    }
+
+                }
+                &:nth-child(2)~article{
+                        @include mobile{
+                            margin-top: #{'min(0.25rem, 10px)'};
+                        }
 
                 }
                 .texts{
+                    @include mobile{
+                        margin-top: #{'min(-6rem, -240px)'};
+                        padding-top: $h;
+                        padding-bottom: $lh;
+                        opacity: 0;
+                        color: #000;
+                        position: relative;
+                        transition: opacity 0.5;
+                        z-index: 999;
+                        // &::after{
+                        //     content: '';
+                        //     display: block;
+                        //     width: 100%;
+                        //     height: #{'min(6rem, 240px)'};
+                        //     background-color: #111;
+                        //     opacity: 0.2;
+                        //     margin-top: #{'min(-5rem, -200px)'};
+                        //     z-index: -999;
+                        // }
+                        &.on2{
+                            opacity: 1;
+                        }
+                    }
                     h3{
                         font-size: #{'min(1.4em, 14px)'};
                         font-family: 'medium';
                         line-height: $lh;
                         cursor: pointer;
+                        @include mobile{
+                            width: 75%;
+                            margin: 0 auto;
+                            font-size: #{'min(1.1em, 11px)'};
+                            line-height: $plh;
+                            height: $lh;
+                            text-align: center;
+                        }
 
                     }
                     h4{
                         font-size: #{'min(1.4em, 14px)'};
-                        font-family: 'regular';
+                        font-family: 'light';
                         line-height: $lh;
+                        @include mobile{
+                            font-size: #{'min(1.2em, 12px)'};
+                            line-height: $plh;
+                            height: $plh;
+                            text-align: center;
+                        }
+                    }
+                    .btn{
+                        cursor: pointer;
+                        display: none;
+                        width: 70%;
+                        margin: 0 auto;
+                        line-height: #{'min(0.75rem, 30px)'};
+                        height: #{'min(0.75rem, 30px)'};
+                        border: 1px solid black;
+                        text-align: center;
+                        font-family: 'regular';
+                        font-size: #{'min(1.2em, 12px)'};
+                        font-weight: 700;
+                        margin-top: #{'min(0.75rem, 30px)'};
+                        color: #000;
+                        &:hover{
+                            background-color: #666;
+                            border: 0px;
+                            color: #fff;
+                        }
+                        @include mobile{
+                            display: block;
+                        }
                     }
                 }
             }
