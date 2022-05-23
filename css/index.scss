@@ -8,38 +8,31 @@ $plh:#{'min(0.5rem, 20px)'};
 $wmt:#{'min(2.5rem, 100px)'};
 $smt:#{'min(1rem, 40px)'};
 
-
 @mixin grid($win) {
     @if($win == 'mob'){
     width: 90%;
     max-width: 420px;
     margin: 0 auto;
-    }
-    @else{
+    }@else{
         width: 80%;
         max-width: 1080px;
         margin: 0 auto;
     }
 }
-
-
 @mixin fl {
     display: flex;
     justify-content: space-between;   
 }
-
 @mixin bg {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
-
 @mixin ff($fontname, $url) {
     @font-face {
         font-family: #{$fontname};
         src: url('./fonts/#{$url}') format('truetype');
-    }
-    
+    }  
 }
 
 @include ff(xe, 'xeicon.ttf');

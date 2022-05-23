@@ -3,12 +3,9 @@ $(function(){
     cntGrp = $('.content.cnt01 section .artView .artGroup');
     cntTab = $('.content.cnt01 header ul.nav');
 
-    var i = 0; 
-    i++;
-
+    var i = 0; i++;
     //컨텐츠 1 이미지 넘기기
-    cntTab.find('li').eq(0).addClass('show1');
-    
+    cntTab.find('li').eq(0).addClass('show1'); 
     cntTab.find('li').mouseenter(function(){
         
         cntTab.find('li').removeClass('show1');
@@ -20,14 +17,12 @@ $(function(){
         })
         cntGr.find('.artGroup').eq(ind).css({
             display : 'flex',
-            width : 'calc(100% / 4)',
-            
+            width : 'calc(100% / 4)',       
         })
         i = ind;
     });
 
-    //컨텐츠2 카테고리 선택 + / -
-    onBtn = $('.content.cnt02 section .artLeft .title .btn');
+    //컨텐츠2 카테고리 
     contitle = $('.content.cnt02 section .artLeft .aco .title');
     conLif = $('.content.cnt02 section .artLeft .aco .title').eq(1).find('li');
     conLisize = $('.content.cnt02 section .artLeft .aco .title').eq(3).find('li');
@@ -45,7 +40,7 @@ $(function(){
         },)
     });
     
-    
+    //+,- 버튼 토글슬라이드
     contitle.even().click(function(){
         $(this).toggleClass('show');
 
