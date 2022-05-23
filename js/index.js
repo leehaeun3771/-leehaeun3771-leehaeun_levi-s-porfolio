@@ -106,25 +106,6 @@ $(function(){
         
     }
 
-
-    // //  컨텐츠1 왼쪽버튼
-    // function leftSlide(){
-
-    //     if(!onOff){
-    //         j++;
-    //         j=j%5;
-    //         onOff == true;
-    //     }
-
-    //     conimg.find('.artGroup').css({display : 'none'});
-    //     conimg.find('.artGroup').eq(j).css({display : 'flex'});
-
-    //     // conimg.stop().animate({
-    //     //     marginLeft : j * -100 +'%'
-    //     // },1500);
-
-    // };
-        
     //텍스트 온오프
     stop.click(function(){
         var inded = $(this).attr('data-num');

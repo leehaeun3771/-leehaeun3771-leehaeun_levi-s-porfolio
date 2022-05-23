@@ -47,18 +47,7 @@ $(function(){
     
     
     contitle.even().click(function(){
-        // contitle.even().removeClass('show');
         $(this).toggleClass('show');
-        // $(this).find('.btn').eq(1).text('33');
-        // $(this).find('.btn').eq(1).css({display : 'none'});
-        // $(this).find('.btn').eq(0).css({display : 'block'});
-
-        // $(this).find('.btn').eq(0).click(function(){
-        //     $(this).css({display : 'none'});
-        //     $(this).sibling().css({display : 'block'});
-        // });
-
-
 
         conLif.click(function(){
             conLif.removeClass('on1');

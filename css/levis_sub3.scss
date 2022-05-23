@@ -335,7 +335,6 @@ html{
         }
         section{
             width: 100%;
-            // margin-left: calc((100vw - 1080px) / -2);
             margin-top: $h;
             @include mobile{
                 margin-top: $lh;
@@ -534,7 +533,6 @@ html{
             @include bg;
             background-image: url('../images/sub3/1950-4.jpg');
             height: #{'min(17rem, 680px)'};
-            // position: relative;
             @include mobile{
                 height: #{'min(6rem, 240px)'};
                 background-position: left 0;
@@ -557,7 +555,6 @@ html{
             left: 0;
             bottom: #{'min(1.5rem, 60px)'};
             margin: auto;
-            // z-index: 999;
             transition: all 0.2s;
             &:hover{
                 background-color: #c70125;
