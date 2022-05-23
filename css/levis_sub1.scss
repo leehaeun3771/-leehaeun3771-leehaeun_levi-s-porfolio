@@ -318,8 +318,9 @@ html{
                     article{
                         width: calc(100% / 2 - 20px);
                         height: #{'min(15rem, 600px)'};
-                        box-shadow: #666 1px 1px 10px;
+                        box-shadow: #666 1px 1px 5px;
                         @include mobile{
+                            height: #{'min(6rem, 240px)'};
                             width: calc(100% / 2 - 10px);
                             margin: 0 auto;
                          }
@@ -493,6 +494,7 @@ html{
                                 width: 10%;
                              }
                              &:nth-child(2){
+                                font-size: #{'min(3.0em, 30px)'};
                                  display: none;
                              }
                             
@@ -537,6 +539,16 @@ html{
                     .title:nth-child(odd).show+div.title{
                         height: #{'min(5.5rem, 220px)'};
                         overflow: visible;
+                    }
+
+                    //0523
+                    .title:nth-child(odd).show{
+                        .btn:nth-child(3){
+                            display: none;
+                        }
+                        .btn:nth-child(2){
+                            display: block;
+                        }
                     }
                     .title:nth-child(4){ //사이즈
                         width: 80%;
