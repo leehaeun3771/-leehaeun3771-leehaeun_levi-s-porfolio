@@ -236,6 +236,9 @@ html{
                             @include mobile{
                                 height: #{'min(12rem, 480px)'};
                             }
+                            &.change{
+                                background-image: url('../images/sub2/cnt03001.png');
+                            }
                         }
                     }
                     .imgMid{
@@ -254,6 +257,9 @@ html{
                                     height: #{'min(4rem, 160px)'};
                                     @include bg;
                                 }
+                                &.change{
+                                    background-image: url('../images/sub2/cnt03002.png');
+                                }
                             }
                         }
                         .imgRight{
@@ -267,6 +273,9 @@ html{
                                 background-image: url('../images/sub2/cnt01003.png');
                                 width: 100%;
                                 height: #{'min(9.87rem, 395px)'};
+                                &.change{
+                                    background-image: url('../images/sub2/cnt03003.png');
+                                }
                                 @include mobile{
                                     height: #{'min(4rem, 160px)'};
                                     margin: 0px (#{'min(0.5em, 5px)'});
@@ -274,6 +283,9 @@ html{
                                 &:nth-child(2){
                                     background-image: url('../images/sub2/cnt01004.png');
                                     margin-top: #{'min(0.25rem, 10px)'};
+                                    &.change{
+                                        background-image: url('../images/sub2/cnt03004.png');
+                                    }
                                     @include mobile{
                                         margin-top: 0px;
                                         height: #{'min(4rem, 160px)'};
@@ -295,9 +307,15 @@ html{
                             width: calc(100% / 2 - (#{'min(0.12rem, 5px)'}));
                             background-color: #aac;
                             height: #{'min(10rem, 400px)'};
+                            &.change{
+                                background-image: url('../images/sub2/cnt03005.png');
+                            }
                             &:nth-child(2){
                                 @include bg;
                                 background-image: url('../images/sub2/cnt01006.png');
+                                &.change{
+                                    background-image: url('../images/sub2/cnt03006.png');
+                                }
                             }
 
                         }

@@ -1,6 +1,7 @@
 $(function(){
     col = $('.content.cnt01 section .texts .txtMid .color .colorimg').find('.image');
     siz = $('.content.cnt01 section .texts .txtMid .size ul').find('li');
+    img = $('.content.cnt01 .image')
 
     col.eq(0).addClass('show');
     col.click(function(){
@@ -25,6 +26,15 @@ $(function(){
         $(this).find('.texts').addClass('on2');
 
     }); 
+
+
+    // 이미지 교체
+    col.even().click(function(){
+        img.removeClass('change');
+    });
+    col.odd().click(function(){
+        img.addClass('change');
+    });
 
 
     // 탑버튼
